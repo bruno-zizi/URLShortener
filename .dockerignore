@@ -1,0 +1,6 @@
+venv
+.env
+build
+urlshortener.egg-info
+.idea
+.*iml

@@ -1,0 +1,10 @@
+vscode
+venv
+.pytest_cache
+.python-version
+.idea
+__pycache__
+build
+urlshortener.egg-info
+dist
+.DS_Store

@@ -1,0 +1,29 @@
+version: '3'
+services:
+
+  url-shortener-test:
+    build: .
+    entrypoint: ["pytest"]
+    profiles:
+      - test
+
+
+  url-shortener:
+    build: .
+    entrypoint: ["urlshortener"]
+    environment:
+      urlshortener_mongo_instance_url: mongodb://url-shortener-mongo/
+      urlshortener_mongo_url_collection: urls
+      urlshortener_database_name: urlshortener
+      urlshortener_expiration_offset: 200
+      urlshortener_shortening_algorithm: sha256
+    stdin_open: true
+    ports:
+      - "5000:5000"
+    depends_on:
+      - url-shortener-mongo
+
+  url-shortener-mongo:
+    image: mongo:7.0.4
+    ports:
+      - "27017:27017"
