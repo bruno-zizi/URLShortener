@@ -4,6 +4,7 @@ setup(
     name="urlshortener",
     version="1.0.0",
     description="Url shortener tool",
+    url="https://github.com/bruno-zizi/URLShortener",
     author="Bruno Zizi",
     author_email="bruno.zizi@email.com",
     packages=["urlshortener", "urlshortener.algorithms", "urlshortener.repository"],
